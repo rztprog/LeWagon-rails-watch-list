@@ -1,22 +1,38 @@
 <nav class="navbar navbar-light bg-light">
-  <span class="navbar-brand mb-0 h1">Navbar</span>
-</nav>
-<div class="container">
-  <h1>Lists</h1>
-
-  <ul class="list-group">
-    <% @lists.each do |list| %>
-      
-      ajouter card bootstrap
-      
-      <li class="d-flex list-custom mt-1"><%= link_to list_path(list), class: "list-group-item w-100" do %>
-      <%= list.name %>
-      <% end %>
-      </li>
+  <span class="navbar-brand mb-0 h1"><img class="justify-content-start logo" src="<%= image_path "netflix.png" %>" alt="logo"></span>
+  <div class="justify-content-end">
+    <%= link_to lists_path, class: "btn btn-secondary font-weight-bold" do %>
+      <span> List</span>
     <% end %>
-  </ul>
+    
+    <%= link_to new_list_path, class: "btn btn-primary" do %>
+      <span class="fas fa-plus"> New list</span>
+    <% end %>
+  </div>
+</nav>
 
+<div class="bannerimage d-flex justify-content-center align-items-center text-white">
+  <h2> Save which movie you want</h2>
+</div>
+
+<div class="container">
   <%= link_to new_list_path, class: "btn btn-primary mt-2" do %>
     <i class="fas fa-plus"> Create a new movie list</i>
   <% end %>
+
+  <div class="d-flex">
+    <% @lists.each do |list| %>
+      <div class="mt-2 mb-3"><%= link_to list_path(list) do %>
+      
+      <div class="card bg-dark text-white">
+        <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
+        <div class="d-flex card-img-overlay justify-content-center align-items-center">
+          <h5 class="title"><%= list.name %></h5>
+        </div>
+      </div>
+      <% end %>
+
+      </div>
+    <% end %>
+  </ul>
 </div>

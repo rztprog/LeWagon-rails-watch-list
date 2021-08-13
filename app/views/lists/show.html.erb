@@ -1,4 +1,19 @@
-<h1> List: <%= @list.name %> </h1>
+<nav class="navbar navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1"><img class="justify-content-start logo" src="<%= image_path "netflix.png" %>" alt="logo"></span>
+  <div class="justify-content-end">
+    <%= link_to lists_path, class: "btn btn-secondary font-weight-bold" do %>
+      <span> List</span>
+    <% end %>
+    
+    <%= link_to new_list_path, class: "btn btn-primary" do %>
+      <span class="fas fa-plus"> New list</span>
+    <% end %>
+  </div>
+</nav>
+
+<div class="cloudbannerimage d-flex justify-content-center align-items-center text-white">
+  <h2> Save which movie you want</h2>
+</div>
 
 <ul class="list-group mb-3">
   <% @list.movies.each do |movie| %>

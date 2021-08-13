@@ -1,10 +1,13 @@
-<h1>Create a new movie list</h1>
+<div class="container">
+  <h1>Create a new movie list</h1>
 
-<%= simple_form_for(@list) do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit, "Create a new movie list", class: "btn btn-primary mt-2" %>
-<% end %>
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, "Create a new movie list", class: "btn btn-primary mt-2" %>
+  <% end %>
 
-<%= link_to lists_path,  class: "btn btn-light mt-2" do %>
-  <i class="fas fa-undo-alt"> Back to list</i>
-<% end %>
+  <%= link_to lists_path,  class: "btn btn-light mt-2" do %>
+    <i class="fas fa-undo-alt"> Back to list</i>
+  <% end %>
+</div>
