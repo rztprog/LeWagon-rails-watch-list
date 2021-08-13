@@ -1,0 +1,11 @@
+<h1>Create a new bookmark for <%= @list.name %></h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie %>
+  <%= f.button :submit, "Create a new bookmark", class: "btn btn-primary mt-2" %>
+<% end %>
+
+<%= link_to list_path(@list.id), class: "btn btn-light mt-2" do %>
+  <i class="fas fa-undo-alt"> Back to <%= @list.name %></i>
+<% end %>
