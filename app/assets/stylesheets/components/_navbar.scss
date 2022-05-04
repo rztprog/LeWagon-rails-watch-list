@@ -1,3 +1,8 @@
+// Reset padding
+.navbar{
+  padding: 0.5rem;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: #111;
@@ -9,6 +14,19 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+
+}
+
+@keyframes grayfilter {
+  0%   {filter: grayscale(10%);}
+  25%  {filter: grayscale(30%);}
+  50%  {filter: grayscale(50%);}
+  100% {filter: grayscale(80%);}
+}
+
+.navbar-brand:hover{
+  animation-name: grayfilter;
+  animation-duration: 4s;
 }
 
 .darkBg{
