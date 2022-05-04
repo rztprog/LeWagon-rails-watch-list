@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/heartcombo/simple_form.git
+  revision: 23205201a935c7e52c39549756e2ec2e2ec47793
+  specs:
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,7 +87,7 @@ GEM
     erubi (1.10.0)
     execjs (2.7.0)
     ffi (1.15.3)
-    font-awesome-sass (5.12.0)
+    font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -183,9 +191,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    simple_form (5.1.0)
-      actionpack (>= 5.2)
-      activemodel (>= 5.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -231,7 +236,7 @@ DEPENDENCIES
   byebug
   cloudinary (~> 1.16.0)
   dotenv-rails
-  font-awesome-sass (~> 5.12.0)
+  font-awesome-sass (~> 5.15)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
@@ -239,7 +244,7 @@ DEPENDENCIES
   rails-controller-testing
   rspec-rails
   sass-rails (>= 6)
-  simple_form
+  simple_form!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
