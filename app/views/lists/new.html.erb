@@ -3,11 +3,16 @@
 
   <%= simple_form_for(@list) do |f| %>
     <%= f.input :name %>
+    <br>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit, "Create a new movie list", class: "btn btn-primary mt-2" %>
-  <% end %>
+    <br>
 
-  <%= link_to root_path,  class: "btn btn-light mt-2" do %>
-    <i class="fas fa-undo-alt"> Back to list</i>
-  <% end %>
+  <div>
+      <%= f.button :submit, "Create a new movie list", class: "btn btn-primary mt-2" %>
+    <% end %>
+
+    <%= link_to root_path,  class: "btn btn-light mt-2" do %>
+      <i class="fas fa-undo-alt"> Back to list</i>
+    <% end %>
+  </div>
 </div>

@@ -1,7 +1,9 @@
 <div class="cloudbannerimage d-flex justify-content-center align-items-center">
   <img src="<%= cl_image_path @list.photo.key, height: 550, crop: :fill %>" alt="Card image">
 </div>
-<h2 class="text-white-center"> <%= @list.name %> </h2>
+<div class="text-white-center">
+  <h2> <%= @list.name %> </h2>
+</div>
 
 <ul class="list-group mb-3 ">
   <% @list.movies.each do |movie| %>
@@ -9,10 +11,12 @@
   <% end %>
 </ul>
 
-<%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary mt-2" do %>
-  <i class="fas fa-plus"> Create new bookmark for <%= @list.name %></i>
-<% end %>
+<div class="mt-2 mb-2">
+  <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary" do %>
+    <i class="fas fa-plus"> Create new bookmark for <%= @list.name %></i>
+  <% end %>
 
-<%= link_to root_path, class: "btn btn-dark mt-2" do %>
-  <i class="fas fa-undo-alt"> Back to list</i>
-<% end %>
+  <%= link_to root_path, class: "btn btn-light" do %>
+    <i class="fas fa-undo-alt"> Back to list</i>
+  <% end %>
+</div>
