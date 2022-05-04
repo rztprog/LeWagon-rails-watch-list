@@ -12,10 +12,11 @@
 </nav>
 
 <div class="cloudbannerimage d-flex justify-content-center align-items-center text-white">
-  <h2> Save which movie you want</h2>
+  <img src="<%= cl_image_path @list.photo.key, height: 550, crop: :fill %>" alt="Card image">
+  <h2> <%= @list.name %> </h2>
 </div>
 
-<ul class="list-group mb-3">
+<ul class="list-group mb-3 ">
   <% @list.movies.each do |movie| %>
     <li class="d-flex list-custom mt-1 list-group-item"><b>Title: </b> <%= movie.title %> <b>Overview: </b> <%= movie.overview %> <b>Rating: </b> <%= movie.rating %></li>
   <% end %>

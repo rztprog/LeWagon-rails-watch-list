@@ -11,8 +11,10 @@ Rails.application.routes.draw do
   # get "bookmarks/new", to: "bookmarks#new"
   # post "bookmarks", to: "bookmarks#create"
 
+  root to: "lists#index"
+
   # Bookmarks
-  resources :lists, only: [ :index, :show, :create, :new ] do
+  resources :lists, only: [:show, :create, :new ] do
     
     resources :bookmarks, only: [ :new, :create ]
   end
