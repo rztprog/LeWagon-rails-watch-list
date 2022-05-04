@@ -5,18 +5,31 @@
   <h2> <%= @list.name %> </h2>
 </div>
 
-<ul class="list-group mb-3 ">
+<ul class="list-group mb-2 container">
   <% @list.movies.each do |movie| %>
-    <li class="d-flex list-custom mt-1 list-group-item"><b>Title: </b> <%= movie.title %> <b>Overview: </b> <%= movie.overview %> <b>Rating: </b> <%= movie.rating %></li>
+    <div class="d-flex">
+      <li class="d-flex list-custom list-group-item bookmark-movie"><b>Title: </b> <%= movie.title %> <b>Overview: </b> <%= movie.overview %> <b>Rating: </b> <%= movie.rating %></li>
+      <%= link_to list_bookmark_path(movie),
+                method: :delete,
+                data: { confirm: "Are you sure you want to delete this bookmark ?" },
+                class: "btn btn-danger" do %>
+                  <i class="far fa-trash-alt"> Delete</i>
+                <% end %>
+    </div>
   <% end %>
+  <%= link_to new_list_bookmark_path(@list.id), class: "d-flex list-custom list-group-item btn btn-primary justify-content-center" do %>
+    <i class="fas fa-plus"> </i>
+  <% end %>
+  <div class="mt-2 mb-2 back-button">
+    <!--
+    <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary" do %>
+      <i class="fas fa-plus"> Create new bookmark for <%= @list.name %></i>
+    <% end %>
+    -->
+
+    <%= link_to root_path, class: "btn btn-light" do %>
+      <i class="fas fa-undo-alt"> Back to list</i>
+    <% end %>
+  </div>
 </ul>
 
-<div class="mt-2 mb-2">
-  <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary" do %>
-    <i class="fas fa-plus"> Create new bookmark for <%= @list.name %></i>
-  <% end %>
-
-  <%= link_to root_path, class: "btn btn-light" do %>
-    <i class="fas fa-undo-alt"> Back to list</i>
-  <% end %>
-</div>
