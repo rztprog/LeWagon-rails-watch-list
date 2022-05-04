@@ -1,7 +1,7 @@
-<div class="cloudbannerimage d-flex justify-content-center align-items-center text-white">
+<div class="cloudbannerimage d-flex justify-content-center align-items-center">
   <img src="<%= cl_image_path @list.photo.key, height: 550, crop: :fill %>" alt="Card image">
-  <h2> <%= @list.name %> </h2>
 </div>
+<h2 class="text-white-center"> <%= @list.name %> </h2>
 
 <ul class="list-group mb-3 ">
   <% @list.movies.each do |movie| %>
