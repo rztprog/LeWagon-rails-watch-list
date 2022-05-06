@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: "lists#index"
 
   # Bookmarks
-  resources :lists, only: [:show, :create, :new ] do
+  resources :lists, only: [:show, :create, :new, :edit, :update ] do
 
     resources :bookmarks, only: [ :new, :create, :destroy ]
   end

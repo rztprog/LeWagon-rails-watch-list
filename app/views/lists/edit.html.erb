@@ -1,0 +1,15 @@
+<div class="container newList">
+  <h1 class="newList">Edit your list</h1>
+  
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, label: false %>
+  <div>
+      <%= f.submit class: "btn btn-success mt-2"%>
+    <% end %>
+
+    <%= link_to list_path(@list), class: "btn btn-secondary mt-2" do %>
+      <i class="fas fa-undo-alt"> Back to list</i>
+    <% end %>
+  </div>
+</div>

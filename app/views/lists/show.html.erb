@@ -1,7 +1,7 @@
 <div class="cloudbannerimage d-flex justify-content-center align-items-center">
   <img src="<%= cl_image_path @list.photo.key, height: 550, crop: :fill %>" alt="Card image">
 </div>
-<div class="text-white-center">
+<div class="text-center newList">
   <h2> <%= @list.name %> </h2>
 </div>
 
@@ -17,7 +17,7 @@
                 <% end %>
     </div>
   <% end %>
-  <%= link_to new_list_bookmark_path(@list.id), class: "d-flex list-custom list-group-item btn btn-primary justify-content-center" do %>
+  <%= link_to new_list_bookmark_path(@list.id), class: "d-flex list-custom list-group-item btn btn-primary justify-content-center p-3" do %>
     <i class="fas fa-plus"> </i>
   <% end %>
   <div class="mt-2 mb-2 back-button">
@@ -26,6 +26,10 @@
       <i class="fas fa-plus"> Create new bookmark for <%= @list.name %></i>
     <% end %>
     -->
+
+    <%= link_to edit_list_path(@list), class: "btn btn-light marginrightbutton" do %>
+      <i class="fas fa-edit"> Edit</i>
+    <% end %>
 
     <%= link_to root_path, class: "btn btn-light" do %>
       <i class="fas fa-undo-alt"> Back to list</i>
