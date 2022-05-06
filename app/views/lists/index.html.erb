@@ -14,7 +14,7 @@
   <div class="d-flex flex-wrap mb-2">
     <% @lists.each do |list| %>
       <div class="mt-2 mr-2"><%= link_to list_path(list) do %>  
-        <div class="card bg-dark text-white cardhover">
+        <div class="card bg-dark text-white cardhover greyfilter">
           <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
           <div class="d-flex card-img-overlay justify-content-center align-items-center">
             <h5 class="title"><%= list.name %></h5>

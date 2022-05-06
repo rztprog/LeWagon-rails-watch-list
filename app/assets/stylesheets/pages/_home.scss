@@ -12,3 +12,11 @@ body{
     margin: 0;
   }
 }
+
+.greyfilter{
+  filter: grayscale(100%);
+
+  &:hover{
+    filter: none;
+  }
+}
