@@ -1,11 +1,14 @@
-<div class="cloudbannerimage d-flex justify-content-center align-items-center">
-  <img src="<%= cl_image_path @list.photo.key, height: 550, crop: :fill %>" alt="Card image">
-</div>
-<div class="text-center newList">
-  <h2> <%= @list.name %> </h2>
+
+<div class="cloudbannerdiv">
+  <img class="cloudbannerimage" src="<%= cl_image_path @list.photo.key %>" alt="Card image">
+  <div class="text-center newList text-image">
+    <h2> <%= @list.name %> </h2>
+  </div>
 </div>
 
-<ul class="list-group mb-2 container">
+
+
+<ul class="list-group mb-2 container p-0">
   <% @list.movies.each do |movie| %>
     <div class="d-flex">
       <li class="d-flex list-custom list-group-item bookmark-movie"><b>Title: </b> <%= movie.title %> <b>Overview: </b> <%= movie.overview %> <b>Rating: </b> <%= movie.rating %></li>
