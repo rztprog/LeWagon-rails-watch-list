@@ -1,32 +1,28 @@
 .bannerimage,
 .cloudbannerimage{
+  width: 100%;
+  height: 550px;
   background-color: black;
   background-position: center;
   background-size: cover;
 }
 
-.cloudbannerdiv{
-  height: 500px;
-}
-
-.cloudbannerimage{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .bannerimage{
-  width: 100%;
-  height: 550px;
   background-image: asset-url("cinema.jpg");
 }
 
-.logo{
-  height: 25px;
+.cloudbanner-container{
+
 }
+
+.cloudbannerimage{
+  object-fit: cover;
+  object-position: center;
+}
+
 
 .text-image{
   // position: absolute;
-  top: 100%;
-  right: 100%;
+  // top: 100%;
+  // right: 100%;
 }
