@@ -6,19 +6,27 @@
 <div class="container">
   <ul class="p-0 movie-grid">
     <% @list.movies.each do |movie| %>
-      <div class="movie-card">
-        <li class="list-custom list-group-item bookmark-movie"><b>Title: </b> <%= movie.title %> <b>Overview: </b> <%= movie.overview %> <b>Rating: </b> <%= movie.rating %></li>
-        <%= link_to list_bookmark_path(movie),
-                  method: :delete,
-                  data: { confirm: "Are you sure you want to delete this bookmark ?" },
-                  class: "" do %>
-                    <i class="far fa-trash-alt"> Delete</i>
-        <% end %>
-      </div>
+      <li class="movie-card">
+        <%= image_tag movie.poster_url, class: "movie-poster" %>
+        <div class="movie-content">
+          <div class="movie-description">
+            <p class=""><b> <%= movie.title %> . <%= movie.rating %> </b></p>
+            <p> <%= movie.overview %> </p>
+          </div>
+        </div>
+          <div class="movie-footer">
+            <%= link_to list_bookmark_path(movie),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete this bookmark ?" },
+                      class: "" do %>
+                        <i class="far fa-trash-alt"> Delete</i>
+                      <% end %>
+          </div>
+      </li>
     <% end %>
     <!--
       <%= link_to new_list_bookmark_path(@list.id), class: "d-flex list-custom list-group-item btn btn-primary justify-content-center p-3" do %>
-        <i class="fas fa-plus"> </i>s
+        <i class="fas fa-plus"> </i>
       <% end %>
     -->
   </ul>
