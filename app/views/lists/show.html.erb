@@ -6,7 +6,7 @@
 <div class="container">
   <ul class="p-0 movie-grid">
     <% @list.movies.each do |movie| %>
-      <li class="movie-card">
+      <li class="movie-card" data-aos="fade-down" data-aos-easing="ease-in-sine">
         <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
         <%= image_tag movie.poster_url, class: "movie-poster" %>
         <div class="movie-content">
@@ -47,3 +47,7 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  AOS.init();
+</script>
