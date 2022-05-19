@@ -34,12 +34,14 @@
   </ul>
 
   <div class="mb-3 back-button w-100">
-    <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary button-marginright" do %>
-      <i class="fas fa-plus"> Add a movie</i>
-    <% end %>
+    <% if user_signed_in? %>
+      <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary button-marginright" do %>
+        <i class="fas fa-plus"> Add a movie</i>
+      <% end %>
 
-    <%= link_to edit_list_path(@list), class: "btn btn-light button-marginright" do %>
-      <i class="fas fa-edit"> Edit</i>
+      <%= link_to edit_list_path(@list), class: "btn btn-light button-marginright" do %>
+        <i class="fas fa-edit"> Edit</i>
+      <% end %>
     <% end %>
 
     <%= link_to root_path, class: "btn btn-light" do %>
