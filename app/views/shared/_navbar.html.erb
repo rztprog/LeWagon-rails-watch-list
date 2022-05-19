@@ -5,10 +5,21 @@
   <div class="justify-content-end">
     <!-- <button type="button" class="btn btn-dark font-weight-bold">Dark</button> -->
 
-    <%= link_to "Home", root_path, class: "btn btn-secondary" %>
-    
-    <%= link_to new_list_path, class: "btn btn-primary" do %>
-      <i class="fas fa-plus"></i> New watchlist
+    <% if user_signed_in? %>
+      <%= link_to new_list_path, class: "btn btn-primary" do %>
+        <i class="fas fa-plus"></i> New watchlist
+      <% end %>
+
+      <%= link_to "", class: "rounded" do %>
+        <i class="fas fa-plus"></i> New watchlist
+      <% end %>
+
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %>
+      <%= link_to "Sign in", new_user_session_path %>
     <% end %>
+
+    <%= link_to "Home", root_path, class: "btn btn-secondary" %>
+
   </div>
 </nav>
