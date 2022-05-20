@@ -2,6 +2,8 @@
   "name": "rails_watch_list",
   "private": true,
   "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/stimulus-webpack-helpers": "^1.0.1",
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.1.5",
     "@rails/activestorage": "^6.1.5",

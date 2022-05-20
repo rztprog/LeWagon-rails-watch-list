@@ -36,3 +36,35 @@
 .logo{
   height: 25px;
 }
+
+// Navbar avatar
+.list-contain{
+  list-style: none;
+}
+
+.list-contain:hover .dropdownmenu{
+  display: block;
+}
+
+.dropdownmenu{
+  display: block;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 6px;
+}
+
+.dropdownitem{
+  display: block;
+  color: black;
+  padding: 12px 16px;
+}
+
+.dropdownitem:hover{
+  text-decoration: none;
+  color: #8db095;
+  background-color: white;
+  transform: scale(1.01);
+}
