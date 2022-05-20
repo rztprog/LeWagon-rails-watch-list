@@ -37,20 +37,23 @@
   height: 25px;
 }
 
-// Navbar avatar
-.list-contain{
-  list-style: none;
-}
+// Avatar content
+.figure-image{
+  display: inline-block;
+  margin-bottom: 0;
 
-.list-contain:hover .dropdownmenu{
-  display: block;
+  &:hover{
+    cursor: pointer;
+    filter: brightness(1.2);
+  }
 }
 
 .dropdownmenu{
   display: block;
   position: absolute;
+  margin-top: 8px;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 130px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 6px;
@@ -60,11 +63,11 @@
   display: block;
   color: black;
   padding: 12px 16px;
+  text-decoration: none;
 }
 
 .dropdownitem:hover{
-  text-decoration: none;
-  color: #8db095;
+  color: #167ffb;
   background-color: white;
-  transform: scale(1.01);
+  // transform: scale(1.01);
 }

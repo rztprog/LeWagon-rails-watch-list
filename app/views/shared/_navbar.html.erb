@@ -6,12 +6,9 @@
     <!-- <button type="button" class="btn btn-dark font-weight-bold">Dark</button> -->
 
     <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       <%= link_to new_list_path, class: "btn btn-primary" do %>
         <i class="fas fa-plus"></i> New watchlist
       <% end %>
-
-
     <% else %>
       <%= link_to "Sign up", new_user_registration_path %>
       <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
@@ -19,12 +16,16 @@
 
     <%= link_to "Home", root_path, class: "btn btn-secondary" %>
 
-    <span class="list-contain">
-      <%= image_tag "default-avatar", crop: :fill, class: 'avatar-bordered', alt: 'avatar' %>
-      <div class="dropdownmenu d-none">
-        <%= link_to "Personal space", edit_user_registration_path, class: "dropdownitem" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdownitem" %>
-      </div>
-    </span>
+    <% if user_signed_in? %>
+      <span class="avatar-content">
+        <figure class="figure-image" data-action="click->avatar-dropdown#action">
+          <%= image_tag "default-avatar", crop: :fill, class: 'avatar-bordered', alt: 'avatar' %>
+        </figure>
+        <div class="dropdownmenu d-none" data-avatar-dropdown-target='dropdown'>
+          <%= link_to "Settings", edit_user_registration_path, class: "dropdownitem" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdownitem" %>
+        </div>
+      </span>
+    <% end %>
   </div>
 </nav>
