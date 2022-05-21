@@ -3,7 +3,6 @@
     <span class="navbar-brand mb-0 h1"><img class="justify-content-start logo" src="<%= image_path "watchlist" %>" alt="logo"></span>
   <% end %>
   <div class="justify-content-end">
-    <!-- <button type="button" class="btn btn-dark font-weight-bold">Dark</button> -->
 
     <% if user_signed_in? %>
       <%= link_to new_list_path, class: "btn btn-primary" do %>
