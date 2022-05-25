@@ -24,7 +24,7 @@ all_movie_from_service.each do |movie|
   overview = movie[:overview].length
   movie = Movie.new(
     title: movie[:title],
-    overview: movie[:overview].match(/.+\./).to_s,
+    overview: movie[:overview].match(/(^.+\.).+\./).to_s,
     poster_url: movie[:poster_url],
     rating: movie[:rating]
   )
