@@ -10,11 +10,14 @@ class MovieDbApiService
     
     all_movies = []
     movies["results"].each do |movie|
-      the_movie = { title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/original#{movie["backdrop_path"]}", rating: movie["vote_average"].to_i }
-      all_movies << { title: movie["title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/original#{movie["backdrop_path"]}", rating: movie["vote_average"].to_i }
+      all_movies << { 
+        title: movie["title"],
+        overview: movie["overview"],
+        poster_url: "https://image.tmdb.org/t/p/original#{movie["backdrop_path"]}",
+        rating: movie["vote_average"].to_i 
+      }
     end
     
     all_movies
   end
-
 end
