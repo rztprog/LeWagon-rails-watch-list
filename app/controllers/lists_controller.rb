@@ -3,6 +3,9 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    if user_signed_in?
+      @self_lists = List.where(user: current_user.id)
+    end
   end
 
   def show

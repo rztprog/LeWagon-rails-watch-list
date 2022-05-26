@@ -15,11 +15,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "lists#index"
 
-  # Bookmarks
-  resources :lists, only: [:show, :create, :new, :edit, :update ] do
+  # Lists / Bookmarks
+  resources :lists, only: [:show, :create, :new, :edit, :update, :destroy ] do
 
     resources :bookmarks, only: [ :new, :create, :destroy ]
   end
-
-  # resources :bookmarks, only: :destroy
 end

@@ -2,15 +2,10 @@
   <h2> Save your watchlists easily</h2>
 </div>
 
+<!-- All users watchlists -->
 <div class="container">
   <div class="watchlist-title mt-2">
-    <h3>Your watchlist(s)</h3>
-
-    <% if user_signed_in? %>
-      <%= link_to new_list_path, class: "btn btn-primary" do %>
-        <i class="fas fa-plus"></i> New watchlist
-      <% end %>
-    <%  end %>
+    <h3>All watchlists</h3>
   </div>
 
   <div class="d-flex flex-wrap mb-2">
@@ -26,4 +21,39 @@
       </div>
     <% end %>
   </div>
+</div>
+
+<!-- Own watchlists -->
+<div class="container">
+  <div class="watchlist-title mt-2">
+    <h3>Your watchlists</h3>
+
+    <% if user_signed_in? %>
+      <%= link_to new_list_path, class: "btn btn-primary" do %>
+        <i class="fas fa-plus"></i> New watchlist
+      <% end %>
+    <%  end %>
+  </div>
+
+  <% if user_signed_in? %>
+    <% if @self_lists.length > 0 %>
+      <div class="d-flex flex-wrap mb-2">
+        <% @self_lists.each do |list| %>
+          <div class="mt-2 mr-2"><%= link_to list_path(list) do %>  
+            <div class="card bg-dark text-white cardhover greyfilter">
+              <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
+              <div class="d-flex card-img-overlay justify-content-center align-items-center">
+                <h5 class="title"><%= list.name %></h5>
+              </div>
+            </div>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="nolog">You do not have watchlists yet, please press the new watchlist button</p>
+    <% end %>
+  <% else %>
+    <p class="nolog">You need to login to see your watchlists</p>
+  <% end %>
 </div>
