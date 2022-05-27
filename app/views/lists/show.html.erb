@@ -1,6 +1,10 @@
 <div class="mb-5">
   <img class="cloudbannerimage" src="<%= cl_image_path @list.photo.key %>" alt="Card image">
-  <h2 class="newList text-image"> <%= @list.name %> </h2>
+  <div class="text-image">
+    <h2 class=""> <%= @list.name %> </h2>
+    <% list_user = User.find_by(id: @list.user) %>
+    <h3 class=""> By <%= list_user.nickname.capitalize %></h3>
+  </div>
 </div>
 
 <div class="container">

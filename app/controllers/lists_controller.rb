@@ -9,6 +9,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    @user = User.where(id: current_user.id)
   end
     
   def new
