@@ -3,15 +3,17 @@
   <div class="text-image">
     <h2 class=""> <%= @list.name %> </h2>
     <% list_user = User.find_by(id: @list.user) %>
-    <h3 class=""> By <%= list_user %></h3>
-    <span class="delete-list-button">
-      <%= link_to list_path(@list),
-              method: :delete,
-              data: { confirm: "Are you sure you want to delete this list ?" },
-              class: "" do %>
-                <button class="btn btn-danger button-marginright"><i class="far fa-trash-alt"> Delete</i></button>
-      <% end %>
-    </span>
+    <h3 class=""> By <%= list_user.nickname %></h3>
+    <% if user_signed_in? && (@list.user == current_user.id) %>
+      <span class="delete-list-button">
+        <%= link_to list_path(@list),
+                method: :delete,
+                data: { confirm: "Are you sure you want to delete this list ?" },
+                class: "" do %>
+                  <button class="btn btn-danger button-marginright"><i class="far fa-trash-alt"> Delete</i></button>
+        <% end %>
+      </span>
+    <% end %>
   </div>
 </div>
 

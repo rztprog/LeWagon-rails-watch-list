@@ -9,7 +9,9 @@ class ListsController < ApplicationController
   end
 
   def show
-    @user = User.where(id: current_user.id)
+    if user_signed_in?
+      @user = User.where(id: current_user.id)
+    end
   end
     
   def new
