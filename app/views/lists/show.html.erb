@@ -3,7 +3,7 @@
   <div class="text-image">
     <h2 class=""> <%= @list.name %> </h2>
     <% list_user = User.find_by(id: @list.user) %>
-    <h3 class=""> By <%= list_user.nickname.capitalize %></h3>
+    <h3 class=""> By <%= list_user.nickname.titleize %></h3>
   </div>
 </div>
 
