@@ -18,7 +18,7 @@
  
 <div class="container">
   <div class="mb-3 back-button w-100">
-    <% if user_signed_in? && (@list.user == current_user) %>
+    <% if user_signed_in? && policy(@list).edit? %>
       <%= link_to new_list_bookmark_path(@list.id), class: "btn btn-primary button-marginright" do %>
         <i class="fas fa-plus"> Add a movie</i>
       <% end %>
