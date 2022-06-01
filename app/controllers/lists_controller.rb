@@ -25,7 +25,7 @@ class ListsController < ApplicationController
     
   def create
     @list = List.new(list_params)
-    @list.user = current_user.id
+    @list.user = current_user
     authorize @list
 
     if @list.save
