@@ -21,4 +21,8 @@ class ListPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def destroy?
+    
+  end
 end
