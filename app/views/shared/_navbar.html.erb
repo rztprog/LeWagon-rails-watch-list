@@ -20,7 +20,7 @@
     <% if user_signed_in? %>
       <span class="avatar-content">
         <figure class="figure-image" data-action="click->avatar-dropdown#action">
-          <% if current_user.photo == "" %>
+          <% if current_user.photo == "" || current_user.photo.nil? %>
             <%= image_tag "default-avatar", crop: :fill, class: 'avatar-bordered', alt: 'avatar' %>
           <% else %>
             <%= image_tag current_user.photo, crop: :fill, class: 'avatar-bordered', alt: 'avatar' %>

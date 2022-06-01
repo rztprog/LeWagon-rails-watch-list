@@ -1,7 +1,7 @@
 <div class="mb-5">
   <img class="cloudbannerimage" src="<%= cl_image_path @list.photo.key %>" alt="Card image">
   <div class="text-image">
-    <h2 class=""> <%= @list.name %> </h2>
+    <h2 class=""> <%= @list.name.capitalize %> </h2>
     <h3 class=""> By <%= @list.user.nickname.capitalize %></h3>
     <% if user_signed_in? && (@list.user == current_user) %>
       <span class="delete-list-button">
