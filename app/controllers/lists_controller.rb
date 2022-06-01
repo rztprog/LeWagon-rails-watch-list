@@ -2,13 +2,17 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update]
 
   def index
-    @lists = List.all
+    # @lists = List.all
+    @lists = policy_scope(List).all
+  
     if user_signed_in?
       @self_lists = List.where(user: current_user.id)
     end
   end
 
   def show
+    authorize @list
+
     if user_signed_in?
       @user = User.where(id: current_user.id)
     end
@@ -16,11 +20,13 @@ class ListsController < ApplicationController
     
   def new
     @list = List.new
+    authorize @list
   end
     
   def create
     @list = List.new(list_params)
     @list.user = current_user.id
+    authorize @list
 
     if @list.save
       redirect_to list_path(@list)
@@ -30,6 +36,7 @@ class ListsController < ApplicationController
   end
 
   def edit
+    authorize @list
   end
 
   def update
