@@ -2,8 +2,7 @@
   <img class="cloudbannerimage" src="<%= cl_image_path @list.photo.key %>" alt="Card image">
   <div class="text-image">
     <h2 class=""> <%= @list.name %> </h2>
-    <% list_user = User.find_by(id: @list.user) %>
-    <h3 class=""> By <%= list_user.nickname %></h3>
+    <h3 class=""> By <%= @list.user.nickname.capitalize %></h3>
     <% if user_signed_in? && (@list.user == current_user) %>
       <span class="delete-list-button">
         <%= link_to list_path(@list),

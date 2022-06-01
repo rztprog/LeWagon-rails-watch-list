@@ -6,7 +6,7 @@ class ListsController < ApplicationController
     @lists = policy_scope(List).all
   
     if user_signed_in?
-      @self_lists = List.where(user: current_user.id)
+      @self_lists = List.where(user: current_user)
     end
   end
 
@@ -14,7 +14,7 @@ class ListsController < ApplicationController
     authorize @list
 
     if user_signed_in?
-      @user = User.where(id: current_user.id)
+      @user = User.where(id: current_user)
     end
   end
     
@@ -46,7 +46,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list = List.find(params[:id])
-
+    authorize @list
     @list.destroy
     redirect_to root_path
   end

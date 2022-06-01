@@ -23,6 +23,6 @@ class ListPolicy < ApplicationPolicy
   end
 
   def destroy?
-    
+    true
   end
 end

@@ -28,7 +28,7 @@
   <div class="watchlist-title mt-2">
     <h3>Your watchlists</h3>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? && policy(List).create? %>
       <%= link_to new_list_path, class: "btn btn-primary" do %>
         <i class="fas fa-plus"></i> New watchlist
       <% end %>
