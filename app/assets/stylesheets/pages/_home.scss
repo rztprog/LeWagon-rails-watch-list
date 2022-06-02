@@ -21,3 +21,12 @@ body{
     filter: none;
   }
 }
+
+.movie-grid-index{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5px;
+  gap: 5px 5px;
+  color: black;
+  max-lines: 2;
+}
