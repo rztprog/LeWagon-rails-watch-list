@@ -1,52 +1,48 @@
 <div class="bannerimage d-flex justify-content-center align-items-center">
-  <h2> Save your watchlists easily</h2>
+  <h2>Save your watchlists easily</h2>
 </div>
-
 <!-- All users watchlists -->
 <div class="container">
   <div class="watchlist-title mt-2">
     <h3>All watchlists</h3>
   </div>
-
   <div class="movie-grid-index">
     <% @lists.each do |list| %>
-      <div class=""><%= link_to list_path(list) do %>  
-        <div class="card bg-dark text-white cardhover greyfilter">
-          <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
-          <div class="d-flex card-img-overlay justify-content-center align-items-center">
-            <h5 class="title"><%= list.name %></h5>
+      <div class=""><%= link_to list_path(list) do %>
+          <div class="card bg-dark text-white cardhover greyfilter">
+            <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
+            <p><%= cl_image_path list.photo.key %></p>
+            <div class="d-flex card-img-overlay justify-content-center align-items-center">
+              <h5 class="title"><%= list.name %></h5>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
 </div>
-
 <!-- Own watchlists -->
 <div class="container">
   <div class="watchlist-title mt-2">
     <h3>Your watchlists</h3>
-
     <% if user_signed_in? && policy(List).create? %>
       <%= link_to new_list_path, class: "btn btn-primary" do %>
         <i class="fas fa-plus"></i> New watchlist
       <% end %>
     <%  end %>
   </div>
-
   <% if user_signed_in? %>
     <% if @self_lists.length > 0 %>
       <div class="movie-grid-index">
         <% @self_lists.each do |list| %>
-          <div class=""><%= link_to list_path(list) do %>  
-            <div class="card bg-dark text-white cardhover greyfilter">
-              <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
-              <div class="d-flex card-img-overlay justify-content-center align-items-center">
-                <h5 class="title"><%= list.name %></h5>
+          <div class=""><%= link_to list_path(list) do %>
+              <div class="card bg-dark text-white cardhover greyfilter">
+                <img class="card-img" src="<%= cl_image_path list.photo.key, height: 150, width: 300, crop: :fill %>" alt="Card image">
+                <div class="d-flex card-img-overlay justify-content-center align-items-center">
+                  <h5 class="title"><%= list.name %></h5>
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
           </div>
         <% end %>
       </div>

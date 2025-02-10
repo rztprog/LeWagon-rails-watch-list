@@ -29,6 +29,7 @@ class ListsController < ApplicationController
     authorize @list
 
     if @list.save
+      puts @list.photo.attached?
       redirect_to list_path(@list)
     else
       render :new
